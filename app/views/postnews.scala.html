@@ -1,0 +1,43 @@
+@(message: String)
+
+
+@main(message) {
+
+<form method="post" class="panel" role="form" action="@routes.News.newsp()">
+
+    <div class="wrapper">
+        <div class="page-head">
+            <h3 class="m-b-less">
+                Latest News Post
+            </h3>
+        </div>
+
+        <br><br>
+        <label class="col-lg-1 control-label">Event</label>
+
+        <div class="col-lg-4">
+            <input type="date" class=" form-control" name="event" required  >
+        </div>
+        <br><br>
+        <label class="col-lg-1 control-label">Date</label>
+
+        <div class="col-lg-4">
+            <input type="date" class=" form-control" name="date" required  >
+        </div>
+        <br><br>
+
+        <div class="form-group">
+            <label class="control-label" for="message">Message</label>
+            <textarea class="form-control" id="message" rows="6" name="textarea" placeholder="Enter a news ..." > </textarea>
+        </div>
+
+
+        <br>
+        <br>
+        <p class="submit"><input class="btn btn-info m-b-10" type="submit" name="assignseed" value="POST">
+
+    </div>
+
+</form>
+
+}

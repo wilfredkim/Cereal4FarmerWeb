@@ -1,0 +1,121 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+GET     /ts                         controllers.Fert.homePage()
+
+POST    /formdata                   controllers.Application.formaction()
+
+#routes for changing status for registration
+POST     /regass        controllers.Fields.Regassigned(id:Long)
+GET      /regrej        controllers.Fields.Regrejected(id:Long)
+
+#routes for changing status for seeds
+POST     /seedsass        controllers.Seed.seedassigned(id:Long)
+GET      /seedsrej        controllers.Seed.seedrejected(id:Long)
+
+#routes for changing status for fertilizers
+GET      /assign                  controllers.Fert.statusassigned(id:Long)
+GET       /reject                  controllers.Fert.statusrejected(id:Long)
+GET      /deletefertorder          controllers.Fert.deleteorders()
+
+
+
+
+#routes for posting stock
+POST    /postfert                   controllers.stockdt.stockfert()
+POST    /updatestock                controllers.stockdt.updatefert(id:Long)
+POST   /postseed                    controllers.stockdt.stockseed()
+POST    /updatestockseed            controllers.stockdt.updateseed(id:Long)
+
+
+
+POST    /regMobile                  controllers.mobileRe.regField()
+POST    /regLogin                    controllers.mobileRe.login()
+POST    /status                      controllers.mobileRe.checkstatus()
+POST    /regAdmin                    controllers.Login.regAdmin()
+POST   /loginAdmin                   controllers.Login.login()
+POST   /addfarmdet                     controllers.FarmDetails.addfarmd()
+POST   /updatefarmd                   controllers.FarmDetails.update(id:Long)
+POST   /seedexist                      controllers.mobileRe.existseed()
+POST   /fertexist                      controllers.mobileRe.existfert()
+POST   /compareland                    controllers.mobileRe.compareland()
+POST   /getcompareland                  controllers.mobileRe.getland()
+
+
+
+
+POST    /viewSeed                   controllers.Seed.viewSeed()
+POST    /regField                   controllers.Fields.regField()
+POST    /viewFert                  controllers.Fert.saveFert()
+POST    /payseed                   controllers.Seed.payseed(id:Long)
+
+#inquiry routes
+POST    /inqreceive                controllers.inquiryclass.inqrec()
+GET     /renderview                controllers.inquiryclass.renderview()
+GET     /answer                    controllers.inquiryclass.answer(id:Long)
+POST    /postanswer               controllers.inquiryclass.Postanswer(id:Long)
+
+
+#postnews
+POST        /newspost               controllers.News.newsp()
+
+
+#sending back to android
+GET        /backnews                controllers.News.getNews()
+GET        /getSeed                  controllers.stockdt.getSeed()
+GET         /getFert                controllers.stockdt.getFert()
+
+
+
+
+#these are Ajax  routes
+GET     /display                    controllers.Fields.list()
+GET     /displayfert                controllers.Fert.list()
+GET     /displayseed                controllers.Seed.slists()
+GET     /displaystockf              controllers.stockdt.stockfertlist()
+GET     /displaystocks              controllers.stockdt.stockseedlist()
+GET     /displayinq                controllers.inquiryclass.list()
+GET     /disviewf                  controllers.FarmDetails.flist()
+
+
+
+
+#routes to render scala.html
+GET     /farmnew                    controllers.Application.farmnew()
+GET     /addf                        controllers.Application.field()
+
+GET     /renderFertOrd              controllers.Application.ViewFerti()
+GET     /renderSeedOrd              controllers.Application.ViewSeed()
+GET     /assignfert                 controllers.Fert.edit(id:Long)
+GET     /editreg                    controllers.Fields.edit(id:Long)
+GET     /editseed                   controllers.Seed.edit(id:Long)
+GET     /renderstock                 controllers.Application.stock()
+GET     /viewstock                   controllers.stockdt.viewstock()
+GET     /renderupdatestock           controllers.stockdt.edit(id:Long)
+GET     /viewstockseed                controllers.stockdt.viewstockseed()
+GET     /renderupdateseedstock        controllers.stockdt.editseedstock(id:Long)
+GET     /postnews                     controllers.News.postnew()
+GET     /try1                           controllers.Application.try1()
+GET     /loginadmin                    controllers.Login.loginadmin()
+GET     /regadmin                       controllers.Login.regadmin()
+GET     /pass                          controllers.Login.pass()
+GET     /addfarm                       controllers.FarmDetails.addfarm()
+GET    /viewfarm                       controllers.FarmDetails.viewfarm()
+GET    /updatefarm                      controllers.FarmDetails.renderupdate(id:Long)
+
+
+#routes for changing status for fertilizers
+POST       /assign                  controllers.Fert.statusassigned(id:Long)
+GET       /reject                  controllers.Fert.statusrejected(id:Long)
+
+
+#sms
+POST   /sendsms               controllers.Sendingsms.sendsms(id:Long)
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

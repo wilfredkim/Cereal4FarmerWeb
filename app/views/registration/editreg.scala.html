@@ -1,0 +1,82 @@
+@(message: String, xx: Addfields)
+
+@main("Analysing registration") {
+
+<form method="post" class="panel" role="form" action="@routes.Fields.Regassigned(xx.Ida)">
+
+    <div class="wrapper">
+        <div class="page-head">
+            <h3 class="m-b-less">
+                Edit User
+            </h3>
+        </div>
+        <br><br>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">First Name</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="fname" required value="@xx.First_name" >
+            </div>
+        </div>
+        <br> <br>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">ID Number</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="id" required value="@xx.Id" >
+            </div>
+        </div>
+
+        <br><br>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Phone Number</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="phone" required value="@xx.Address" >
+            </div>
+        </div>
+
+
+        <br>
+        <br>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">LandSize</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="size" required value="@xx.Land_Size" >
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Cultivation Size</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="csize" required value="@xx.Cultivation_Size" >
+            </div>
+        </div>
+
+
+
+        <br>
+        <br>
+         <div class="page-head">
+                    <h3 class="m-b-less">
+                        Write Message of Rejection and Acceptance to Farmer.
+                    </h3>
+                </div>
+                <div class="form-group">
+
+                    <textarea class="form-control" id="msg" rows="6" name="answer"  placeholder="Write you are answer here..." >
+                    </textarea>
+                </div>
+                <br><br>
+
+        <p class="submit"><input class="btn btn-info m-b-10" type="submit" name="commit" value="Assigned">
+         <a class="btn btn-warning m-b-10" href="@routes.Fields.Regrejected(xx.Ida)">Denied</a></p>
+
+    </div>
+</form>
+
+
+}

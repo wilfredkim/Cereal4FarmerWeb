@@ -1,0 +1,132 @@
+
+@(message: String)
+
+
+@main(message) {
+<script type="text/javascript">
+    /* Table initialisation */
+    //
+    $(document).ready(function() {
+
+        $('#boardrooms_table').DataTable( {
+            "PaginationType": "bootstrap",
+            "PaginationType": "bootstrap",
+            "responsive": true,
+            "bProcessing": true,
+            "aaSorting": [[ 0, "asc" ]],
+            "bServerSide": true,
+            "sAjaxSource": "@routes.inquiryclass.list()",
+            dom: '<"tbl-top clearfix"lfr>,t,<"tbl-footer clearfix"<"tbl-info pull-left"i><"tbl-pagin pull-right"p>>',
+            "aoColumns": [
+                 { "mDataProp": "Name" },
+                { "mDataProp": "ID_Number" },
+
+
+                { "mDataProp": "PhoneNumber" },
+
+                { "mDataProp": "Date" },
+                { "mDataProp": "Message" },
+
+
+
+
+                {
+                    "mDataProp": null,
+                    "mRender": function(obj) {
+                        var sReturn = obj.num;
+                        var status=   obj.status;
+                        console.log(status);
+                        if(status==1){
+                            var deactivateButton = "<a class='hidden-xs'  id='cedit' style='float: center'  data-title="+sReturn+"> <span class='label label-warning label-mini'>Pending</span></a>";
+                            return  deactivateButton;
+                        }else if(status==2){
+                            var sReturn = obj.num;
+                            var activateButton = "<a class='hidden-xs'  id='cedit' style='float: center'  data-title="+sReturn+"><span class='label label-warning label-mini'>Answered</span></a>";
+                            return  activateButton;
+
+                        }
+
+
+                    }
+                },
+                 {
+                    "mDataProp": null,
+                    "mRender": function(obj) {
+                        var sReturn = obj.num;
+                        var returnButton = "<a class='hidden-xs' href='/answer?id="+sReturn+"' id='cedit' style='float: center'  data-title="+sReturn+">  <button class='btn btn-primary btn-xs'><i class='fa fa-pencil'></i></button> </a>";
+                        return  returnButton;
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+                },
+
+
+            ]
+
+        } );
+
+    } );
+
+</script>
+
+<!--body wrapper start-->
+<div class="wrapper">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading ">
+                    ORDER DETAILS
+
+
+                                <span class="tools pull-right">
+                                    <a class="fa fa-repeat box-refresh" href="javascript:;"></a>
+                                    <a class="t-close fa fa-times" href="javascript:;"></a>
+                                     <a href=")" class="button">Add User</a>
+
+                                </span>
+                </header>
+                <table class="table responsive-data-table data-table" id="boardrooms_table">
+                    <thead>
+                    <tr>
+                        <th> Name</th>
+                        <th>ID Number</th>
+                        <!--  <th>Second Name</th>-->
+
+
+                        <th> Phone Number</th>
+                        <!--  <th>Email</th>
+                          <th>Password</th>-->
+                        <!-- <th> Block Number</th>-->
+
+                        <th>Date</th>
+                        <th>Message</th>
+
+                        <th> Status</th>
+                        <th> Answer</th>
+
+
+
+                    </tr>
+                    </thead>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+</div>
+
+
+
+}

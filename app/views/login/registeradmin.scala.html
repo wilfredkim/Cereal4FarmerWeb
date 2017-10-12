@@ -1,0 +1,54 @@
+@(message: String)
+
+
+@main(message) {
+
+<div class="login-logo">
+    <img src="img/login_logo.png" alt=""/>
+</div>
+
+<h2 class="form-heading">registration now</h2>
+<div class="container log-row">
+    <form class="form-signin"method="post" action="@routes.Login.regAdmin()">
+        <p>Enter your personal details below</p>
+        <input type="text" class="form-control"name="fname" required=" " placeholder="Full Name" autofocus>
+        <!--//<input type="text" class="form-control"name="add" placeholder="Address" autofocus>-->
+        <input type="text" class="form-control"name="email" required=" "  placeholder="Email" autofocus>
+         <div class="radio-custom radio-success">
+            <input type="radio" value="yes" checked="checked" name="option-yes" id="male">
+            <label for="male" >Male</label>
+            <input type="radio"  value="no" name="option-yes" id="female">
+            <label for="female">Female</label>
+        </div>
+
+        <p> Enter your account details below</p>
+        <input type="text" class="form-control"name="username" required=" "  placeholder="User Name" autofocus>
+        <input type="password" class="form-control"name="pass" required=" " placeholder="Password">
+        <input type="password" class="form-control" required=" "name="repass" placeholder="Re-type Password">
+        <label class="checkbox-custom check-success">
+            <input type="checkbox" value="agree this condition" id="checkbox1"> <label for="checkbox1">I agree to the Terms of Service and Privacy Policy</label>
+        </label>
+
+
+        <button class="btn btn-lg btn-success btn-block" type="submit">Submit</button>
+
+        <div class="registration m-t-20 m-b-20">
+            Already Registered.
+            <a class="" href="/loginadmin">
+                Login
+            </a>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+}

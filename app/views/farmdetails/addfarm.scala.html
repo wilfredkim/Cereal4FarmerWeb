@@ -1,0 +1,52 @@
+@(message: String)
+
+
+@main(message) {
+
+
+
+
+
+
+<div class="login-logo">
+    <img src="img/login_logo.png" alt=""/>
+</div>
+
+<h2 class="form-heading">Farm Details of Farmer</h2>
+<div class="container log-row">
+    <form class="form-signin" method="post" action="@routes.FarmDetails.addfarmd()">
+        <p>Enter your personal details below</p>
+        <input type="text" class="form-control" required="" name="fname" placeholder="Full Name" autofocus>
+        <input type="text" class="form-control" required="" name="id" placeholder="ID Number" autofocus>
+        <input type="text" class="form-control" required="" name="address" placeholder="Address" autofocus>
+        <input type="text" class="form-control" required="" name="email" placeholder="Email" autofocus>
+        <input type="text" class="form-control" required="" name="town" placeholder="City/Town" autofocus>
+
+
+        <p> Enter Farm details below</p>
+        <input type="text" class="form-control" name="location" required="" placeholder="Location" autofocus>
+        <input type="text" class="form-control" name="tsize" required="" placeholder="Total Landsize">
+        <input type="text" class="form-control" name="csize" required="" placeholder="Cultivation size">
+
+
+
+        <button class="btn btn-lg btn-success btn-block" type="submit">Submit</button>
+
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

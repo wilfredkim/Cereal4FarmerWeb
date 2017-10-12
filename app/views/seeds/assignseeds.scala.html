@@ -1,0 +1,88 @@
+@(message: String, seed: Seeds)
+
+@main("Assig") {
+
+<form method="post" class="panel" role="form" action="@routes.Seed.seedassigned(seed.Auto)">
+
+    <div class="wrapper">
+        <div class="page-head">
+            <h3 class="m-b-less">
+                Analysing Order
+            </h3>
+        </div>
+        <br><br>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">ID Number</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="idnum" required value="@seed.ID_Number" >
+            </div>
+        </div>
+        <br> <br>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Brand Name</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="bname" required value="@seed.SeedBrand" >
+            </div>
+        </div>
+        <br><br>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Quantity</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="qua" required value="@seed.Quantity" >
+            </div>
+        </div>
+
+
+        <br>
+        <br>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">LandSize</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="size" required value="@seed.LandSize" >
+            </div>
+        </div>
+
+
+        <br>
+        <br>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Cultivation Size</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="csize" required value="@seed.Cultivation" >
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Phone Number</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="phone" required value="@seed.PhoneNumber" >
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Description</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="desc" required value="@seed.Description" >
+            </div>
+        </div>
+
+
+        <br>
+        <br>
+        <p class="submit"><input class="btn btn-info m-b-10" type="submit" name="assignseed" value="Assigned">
+            <a class="btn btn-warning m-b-10" href="@routes.Seed.seedrejected(seed.Auto)">Denied</a></p>
+    </div>
+
+</form>
+
+}

@@ -1,0 +1,103 @@
+
+@(message: String)
+
+
+@main(message) {
+<script type="text/javascript">
+    /* Table initialisation */
+    //
+    $(document).ready(function() {
+
+        $('#boardrooms_table').DataTable( {
+            "PaginationType": "bootstrap",
+            "PaginationType": "bootstrap",
+            "responsive": true,
+            "bProcessing": true,
+            "aaSorting": [[ 0, "asc" ]],
+            "bServerSide": true,
+            "sAjaxSource": "@routes.FarmDetails.flist()",
+            dom: '<"tbl-top clearfix"lfr>,t,<"tbl-footer clearfix"<"tbl-info pull-left"i><"tbl-pagin pull-right"p>>',
+            "aoColumns": [
+              { "mDataProp": "FullName" },
+                { "mDataProp": "ID_Number" },
+
+
+                { "mDataProp": "Address" },
+
+                { "mDataProp": "Town" },
+                { "mDataProp": "Location" },
+                { "mDataProp": "LandSize" },
+                 { "mDataProp": "Cultivation" },
+
+
+
+
+                 {
+                    "mDataProp": null,
+                    "mRender": function(obj) {
+                        var sReturn = obj.AutoNo;
+                        var returnButton = "<a class='hidden-xs' href=' /updatefarm?id="+sReturn+"' id='cedit' style='float: center'  data-title="+sReturn+">  <button class='btn btn-primary btn-xs'><i class='fa fa-pencil'></i></button> </a>";
+                        return  returnButton;
+                    }   },
+
+
+            ]
+
+        } );
+
+    } );
+
+</script>
+
+<!--body wrapper start-->
+<div class="wrapper">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading ">
+                    ORDER DETAILS
+
+
+                                <span class="tools pull-right">
+                                    <a class="fa fa-repeat box-refresh" href="javascript:;"></a>
+                                    <a class="t-close fa fa-times" href="javascript:;"></a>
+                                     <a href=")" class="button">Add User</a>
+
+                                </span>
+                </header>
+                <table class="table responsive-data-table data-table" id="boardrooms_table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>ID Number</th>
+                        <!--  <th>Second Name</th>-->
+
+
+                        <th> Address</th>
+                        <!--  <th>Email</th>
+                          <th>Password</th>-->
+                        <!-- <th> Block Number</th>-->
+                        <th>Town</th>
+                        <th>Location</th>
+                        <th>LandSize</th>
+                        <th>Cultivation Size</th>
+                        <th>Update</th>
+
+
+
+
+
+                    </tr>
+                    </thead>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+</div>
+
+
+
+}

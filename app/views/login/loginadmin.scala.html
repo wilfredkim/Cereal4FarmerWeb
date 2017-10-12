@@ -1,0 +1,52 @@
+@(message: String)
+
+
+@main(message) {
+<div class="login-logo">
+    <img src="img/login_logo.png" alt=""/>
+</div>
+
+<h2 class="form-heading">login</h2>
+<div class="container log-row">
+    <form class="form-signin" method="post" action="@routes.Login.login()">
+        <div class="login-wrap">
+            <input type="text" class="form-control" required=" "  name="user" placeholder="User ID" autofocus>
+            <input type="password" required=" " class="form-control"name="pass" placeholder="Password">
+            <button class="btn btn-lg btn-success btn-block" type="submit">LOGIN</button>
+            <div class="login-social-link">
+                <a href="index.html" class="facebook">
+                    Facebook
+                </a>
+                <a href="index.html" class="twitter">
+                    Twitter
+                </a>
+            </div>
+            <label class="checkbox-custom check-success">
+                <input type="checkbox" value="remember-me" id="checkbox1"> <label for="checkbox1">Remember me</label>
+                <a class="pull-right" data-toggle="modal" href="/pass"> Forgot Password?</a>
+            </label>
+
+            <div class="registration">
+                Don't have an account yet?
+                <a class="" href="/regadmin">
+                    Create an account
+                </a>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

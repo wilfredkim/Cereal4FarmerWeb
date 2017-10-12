@@ -1,0 +1,61 @@
+@(message: String, update: StockDetails)
+
+@main("Updating") {
+
+<form method="post" class="panel" role="form" action="@routes.stockdt.updatefert(update.num)">
+
+    <div class="wrapper">
+        <div class="page-head">
+            <h3 class="m-b-less">
+                Update Fertilizers Stock
+            </h3>
+        </div>
+        <br><br>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Brand Name</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="brand" required value="@update.Brand" >
+            </div>
+        </div>
+        <br> <br>
+
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Quantity</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="qua" required value="@update.Quantity" >
+            </div>
+        </div>
+        <br>
+        <br>
+       <!-- <div class="form-group">
+            <label class="col-lg-2 control-label">Total Price</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="tprice" required value="@update.Totalp" >
+            </div>
+        </div>
+
+
+        <br>
+        <br>-->
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Price per bag</label>
+
+            <div class="col-lg-4">
+                <input type="text" class=" form-control" name="price" required value="@update.Price" >
+            </div>
+        </div>
+
+
+        <br>
+        <br>
+        <p class="submit"><input class="btn btn-info m-b-10" type="submit" name="assignseed" value="UPDATE">
+
+    <a class="btn btn-warning m-b-10" href="@routes.stockdt.viewstock()">CANCEL</a></p>
+</div>
+</form>
+
+}

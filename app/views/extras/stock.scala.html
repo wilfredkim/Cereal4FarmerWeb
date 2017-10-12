@@ -1,0 +1,71 @@
+@(message: String)
+
+
+@main(message) {
+
+<div class="login-logo">
+    <img src="img/login_logo.png" alt=""/>
+</div>
+<div >
+    <div class="col-lg-10">
+        <h3>Stock Details</h3>
+    </div>
+    <div class="col-md-6">
+        <form class="form-vertical" method="post" action="@routes.stockdt.stockfert()">
+            <div class="col-md-6">
+                <h4 >Fertilizers</h4>
+                <div class="form-group">
+                     <label class="col-lg-4 control-label">BrandName</label>
+                    <div class="col-lg-8">
+                        <select class = "form-control" name ="bname">
+                            <option>MKULIMA BORA</option>
+                            <option>DAP</option>
+                            <option>CAN</option>
+                            <option>NPK</option>
+                            </select>
+                    </div>
+                </div>
+
+                Quantity(bags)<input type="number" name="quant" class="form-control"  required>
+
+
+                Price per bag(Ksh)<input type="number"name="price" class="form-control"  required>
+
+                <button class="btn btn-lg btn-success btn-block" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+
+        <form class="form-ertical" method="post" action="@routes.stockdt.stockseed()">
+            <div class="col-md-6">
+                <h4 >Seeds</h4>
+                <div class="form-group">
+                      <label class="col-lg-4 control-label">BrandName</label>
+                         <div class="col-lg-8">
+                             <select class = "form-control" name ="bname">
+                                     <option>WESTERN SEED</option>
+                                     <option>MONSANTO</option>
+                                      <option>SeedCo</option>
+                                      <option>FreshCo</option>
+                                       <option>East Africa Seed</option>
+                                        <option>Kenya Seed</option>
+                             </select>
+                           </div>
+                 </div>
+                Quantity(bags)<input type="number" name="quant" class="form-control"  required>
+
+
+                Price per bag(Ksh)<input type="number"name="price" class="form-control"  required>
+
+                <button class="btn btn-lg btn-success btn-block" type="submit">Submit</button>
+
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+
+
+}

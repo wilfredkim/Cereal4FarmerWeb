@@ -1,0 +1,136 @@
+@(message: String, regp:Int, rega:Int, regr:Int, inqp:Int, inqa:Int, rem:Int, remS:Int)
+
+@main("Home") {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Admin Page</title>
+</head>
+<body>
+<div class="page-head">
+    <h3>
+        Cereal Fertilizers and Seeds Booking system DashBoard
+    </h3>
+    <span class="sub-title">Welcome to Cereal4Farmers</span>
+    <div class="state-information">
+
+    </div>
+</div>
+
+<!--body wrapper start-->
+<div class="wrapper">
+    <!--state overview start-->
+
+
+<div class="col-lg-3 col-sm-6">
+    <section class="panel">
+        <div class="symbol green-color">
+            <i class="fa fa-bullseye"></i>
+        </div>
+        <div class="value gray">
+            <h1 class="green-color timer" data-from="0" data-to="@regp"
+                data-speed="3000">
+                <!--2345-->
+            </h1>
+            <p> Registration Pendings</p>
+        </div>
+    </section>
+</div>
+
+    <div class="col-lg-3 col-sm-6">
+        <section class="panel ">
+            <div class="symbol purple-color">
+                <i class="fa fa-tags"></i>
+            </div>
+            <div class="value gray">
+                <h1 class="purple-color timer" data-from="0" data-to="@rega"
+                    data-speed="1000">
+                    <!--123-->
+                </h1>
+                <p> Registration Accepted</p>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <section class="panel green">
+            <div class="symbol ">
+                <i class="fa fa-cloud-upload"></i>
+            </div>
+            <div class="value white">
+                <h1 class="timer" data-from="0" data-to="@regr"
+                    data-speed="1000">
+                    <!--432-->
+                </h1>
+                <p>Rejected Registration</p>
+            </div>
+        </section>
+    </div>
+
+</div>
+<div class="wrapper">
+    <div class="col-lg-3 col-sm-6">
+        <section class="panel green">
+            <div class="symbol ">
+                <i class="fa fa-cloud-upload"></i>
+            </div>
+            <div class="value white">
+                <h1 class="timer" data-from="0" data-to="@inqp"
+                    data-speed="1000">
+                    <!--432-->
+                </h1>
+                <p>Pending Inquiries</p>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <section class="panel green">
+            <div class="symbol ">
+                <i class="fa fa-cloud-upload"></i>
+            </div>
+            <div class="value white">
+                <h1 class="timer" data-from="0" data-to="@inqa"
+                    data-speed="1000">
+                    <!--432-->
+                </h1>
+                <p>Answered inquiries</p>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="wrapper">
+
+
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel green">
+                <div class="symbol ">
+                    <i class="fa fa-cloud-upload"></i>
+                </div>
+                <div class="value white">
+                    <h1 class="timer" data-from="0" data-to="@rem"
+                        data-speed="1000">
+                        <!--432-->
+                    </h1>
+                    <p>Remaining Fertilizers bags</p>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel green">
+                <div class="symbol ">
+                    <i class="fa fa-cloud-upload"></i>
+                </div>
+                <div class="value white">
+                    <h1 class="timer" data-from="0" data-to="@remS"
+                        data-speed="1000">
+                        <!--432-->
+                    </h1>
+                    <p>Remainig Seeds bags</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    </div>
+}
